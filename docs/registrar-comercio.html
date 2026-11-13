@@ -1,134 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
-<!-- End Google Tag Manager -->
-
-<title>Registra tu comercio — CMF</title>
-
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css?v=29" rel="stylesheet"/>
-
-<style>
-  /* ===== Formulario de registro (diseño propio, no Google) ===== */
-  .reg-card{background:#fff;border-radius:18px;padding:clamp(20px,4vw,34px);max-width:760px;margin:0 auto;
-    box-shadow:0 20px 50px rgba(1,30,65,.15)}
-  .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .reg-field{display:flex;flex-direction:column}
-  .reg-field.full{grid-column:1 / -1}
-  .reg-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
-  .reg-label .req{color:var(--lime2,#7ab800)}
-  .reg-input{font:inherit;font-size:15px;color:#1b2a3d;padding:12px 14px;border:1.5px solid #d7dde6;
-    border-radius:10px;background:#fff;width:100%;transition:border-color .15s,box-shadow .15s}
-  .reg-input::placeholder{color:#9aa6b4}
-  .reg-input:focus{outline:none;border-color:var(--lime,#93D500);box-shadow:0 0 0 3px rgba(147,213,0,.18)}
-  .reg-btn{grid-column:1 / -1;margin-top:6px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;
-    background:var(--lime,#93D500);color:var(--navy);border:none;border-radius:12px;padding:15px 20px;min-height:52px;
-    transition:transform .1s,background .15s}
-  .reg-btn:hover{background:var(--lime2,#7ab800)}
-  .reg-btn:active{transform:translateY(1px)}
-  .reg-note{grid-column:1/-1;text-align:center;font-size:12px;color:#8a97a6;margin:4px 0 0}
-  .reg-thanks{display:none;text-align:center;padding:20px 6px}
-  .reg-thanks h3{color:var(--navy);font-size:22px;margin:0 0 8px}
-  .reg-thanks p{color:#5a6b7d;margin:0}
-  .reg-check{width:64px;height:64px;border-radius:50%;background:rgba(147,213,0,.15);display:flex;align-items:center;
-    justify-content:center;margin:0 auto 14px;font-size:34px;color:var(--lime2,#7ab800)}
-  .is-sent .reg-form{display:none}
-  .is-sent .reg-thanks{display:block}
-  @media (max-width:560px){ .reg-grid{grid-template-columns:1fr} }
-</style>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-<div id="site-header"></div>
-
-<div id="app">
-<div class="view" id="view-registrar-comercio">
-<div class="view-hero">
-<div class="view-hero-inner">
-<div class="section-label">Comercios aliados</div>
-<h1>Registra <em>tu comercio</em></h1>
-<p>Déjanos tus datos y nuestro equipo te contactará.</p>
-</div>
-</div>
-<div class="view-content">
-<div class="view-content-inner">
-
-<div class="reg-card reveal" id="reg-card">
-
-  <!--
-    IMPORTANTE: reemplaza los "entry.XXXXXXX" por los códigos reales
-    de tu Google Form (ver instrucciones al final). El resto ya funciona.
-  -->
-  <form class="reg-form reg-grid"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSdRX9VY_9a07anmYVTYq-4DU9jbQc2G2xBLyPCFVuh9O3awPQ/formResponse"
-        method="POST"
-        target="reg-oculto"
-        onsubmit="setTimeout(function(){document.getElementById('reg-card').classList.add('is-sent')},300)">
-
-    <div class="reg-field">
-      <label class="reg-label" for="r-nombre">Nombre <span class="req">*</span></label>
-      <input class="reg-input" id="r-nombre" name="entry.970021939" placeholder="Tu nombre" required>
-    </div>
-    <div class="reg-field">
-      <label class="reg-label" for="r-apellido">Apellido <span class="req">*</span></label>
-      <input class="reg-input" id="r-apellido" name="entry.1827561359" placeholder="Tu apellido" required>
-    </div>
-    <div class="reg-field">
-      <label class="reg-label" for="r-celular">Número de celular <span class="req">*</span></label>
-      <input class="reg-input" id="r-celular" name="entry.1878814091" type="tel" inputmode="tel" placeholder="6000-0000" required>
-    </div>
-    <div class="reg-field">
-      <label class="reg-label" for="r-correo">Correo electrónico <span class="req">*</span></label>
-      <input class="reg-input" id="r-correo" name="entry.817396080" type="email" placeholder="tucorreo@ejemplo.com" required>
-    </div>
-    <div class="reg-field full">
-      <label class="reg-label" for="r-comercio">Nombre del comercio <span class="req">*</span></label>
-      <input class="reg-input" id="r-comercio" name="entry.1549461562" placeholder="Nombre de tu negocio" required>
-    </div>
-    <div class="reg-field full">
-      <label class="reg-label" for="r-direccion">Dirección del comercio <span class="req">*</span></label>
-      <input class="reg-input" id="r-direccion" name="entry.1302107094" placeholder="Provincia, ciudad, calle…" required>
-    </div>
-
-    <button class="reg-btn" type="submit">Enviar solicitud</button>
-    <p class="reg-note">* Todos los campos son obligatorios.</p>
-  </form>
-
-  <div class="reg-thanks">
-    <div class="reg-check">✓</div>
-    <h3>¡Gracias por tu interés!</h3>
-    <p>Recibimos tus datos. Nuestro equipo te contactará pronto.</p>
-  </div>
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-<!-- iframe oculto: recibe la respuesta de Google para que la página NO se redirija -->
-<iframe name="reg-oculto" style="display:none" title="oculto"></iframe>
-
-<div id="site-footer"></div>
-
-<script src="assets/js/include.js?v=1"></script>
-<script src="assets/js/script.js?v=5"></script>
-</body>
-</html>
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Solicita la afiliación de tu negocio a la red de comercios aliados de CMF. Completa tus datos y envía tus documentos en un proceso guiado.">
+<meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer">
+<title>Demostración del registro de comercios | CMF</title>
+<link rel="icon" type="image/png" href="assets/img/cmf-logo.png">
+<link rel="stylesheet" href="assets/css/merchant-registration.css">
+<script src="assets/js/registration-config.js" defer></script>
+<script src="assets/js/registration-demo.js" defer></script>
+<script src="assets/js/merchant-registration.js" defer></script>
+</head><body>
+<a class="skip" href="#main">Saltar al formulario</a>
+<header class="topbar"><a class="brand" href="index.html" aria-label="CMF, ir al inicio"><img src="assets/img/cmf-logo.png" width="301" height="137" alt="CMF"></a><span class="header-label">Comercios aliados</span><a class="back-site" href="become-a-merchant.html">Volver a CMF</a></header>
+<div id="mode-banner" class="mode-banner">DEMOSTRACIÓN · Usa datos ficticios. No se envían correos ni se guardan solicitudes.</div>
+<main id="main">
+<section id="welcome" class="welcome">
+ <div class="welcome-copy"><p class="eyebrow"><span class="tiny-square"></span> Hagamos crecer tu negocio</p><h1>Sé parte de los<br>comercios aliados<br><em>de CMF</em></h1><p class="lead">Da el siguiente paso con tu comercio. Cuéntanos sobre ti y tu negocio; nuestro equipo revisará tu solicitud y se pondrá en contacto contigo.</p><button class="button primary start" id="start" disabled>Preparando formulario…</button><p class="welcome-note">Usa datos ficticios y <a href="samples/documento-de-prueba.png" download>descarga el documento de prueba</a></p></div>
+ <div class="welcome-card"><div class="card-heading">Tu solicitud, paso a paso</div><ol class="welcome-steps">
+ <li><span>01</span><div><h2>Identifícate</h2><p>Completa tus datos y verifica tu correo</p></div></li>
+ <li><span>02</span><div><h2>Información sobre tu comercio</h2><p>Completa sus datos, adjunta los documentos y envía tu solicitud</p></div></li></ol>
+ <div class="documents-note"><strong>Antes de comenzar</strong><p>Prepara tu identificación, aviso de operaciones, carta bancaria y declaración de renta o estado de cuenta. Certificación de Registro Público, si aplica.</p><span>PDF, JPG o PNG · Hasta 5 MB por archivo</span></div></div>
+</section>
+<section id="wizard" class="wizard" hidden aria-label="Solicitud de afiliación">
+ <aside class="sidebar"><p class="eyebrow">Tu solicitud</p><h2>Un paso más<br>cerca de CMF</h2><ol class="step-nav">
+ <li data-step="1" aria-current="step"><span class="step-number">1</span><div><strong>Identifícate</strong><small>Datos de contacto y correo</small></div></li>
+ <li data-step="2"><span class="step-number">2</span><div><strong>Información sobre tu comercio</strong><small>Datos y documentos</small></div></li></ol>
+ <div class="sidebar-note"><p>Usaremos tus datos para evaluar esta solicitud y comunicarnos contigo.</p></div></aside>
+ <div class="form-panel"><div class="form-topline"><span id="step-caption">PASO 1 DE 2</span><span id="progress-label">Identifícate</span></div><div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+ <form id="registration" novalidate>
+ <div class="honeypot" aria-hidden="true"><label for="website">Sitio web</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+ <fieldset data-panel="1"><legend>Comencemos por ti</legend><p class="section-intro">Ingresa los datos del dueño o representante del comercio. Los campos marcados con * son obligatorios.</p><div class="field-grid">
+ <div class="field"><label for="nombre">Nombre *</label><input id="nombre" name="nombre" required minlength="2" maxlength="70" autocomplete="given-name" placeholder="Tu nombre"></div>
+ <div class="field"><label for="apellido">Apellido *</label><input id="apellido" name="apellido" required minlength="2" maxlength="70" autocomplete="family-name" placeholder="Tu apellido"></div>
+ <div class="field"><label for="celular">Número de celular *</label><input id="celular" name="celular" type="tel" required maxlength="20" autocomplete="tel" inputmode="tel" placeholder="Ej. 6000-0000"><small>Panamá · +507</small></div>
+ <div class="field full"><label for="correo">Correo electrónico *</label><input id="correo" name="correo" type="email" required maxlength="254" autocomplete="email" placeholder="nombre@ejemplo.com"><small>Usa un correo ficticio. El código de demostración aparecerá en pantalla</small></div></div>
+ <div class="verification"><div id="captcha"></div><button type="button" class="button secondary" id="send-code">Enviar código de verificación</button><div id="code-entry" hidden><label for="code">Código de seis dígitos</label><div class="code-row"><input id="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="000000"><button type="button" class="button primary" id="verify-code">Verificar correo</button></div><p id="code-help" class="field-help">Revisa tu bandeja de entrada y spam. El código vence en 10 minutos.</p><p id="local-code" class="local-code" hidden></p></div><p id="verified" class="verified" hidden>Correo verificado</p></div></fieldset>
+ <fieldset data-panel="2" hidden><legend>Información sobre tu comercio</legend><p class="section-intro">Completa los datos, adjunta los documentos y revisa tu solicitud antes de enviarla.</p><div class="field-grid">
+ <div class="field full"><label for="cedula">Número de cédula o documento *</label><input id="cedula" name="cedula" required minlength="3" maxlength="40" autocomplete="off" placeholder="Ej. 8-123-456"></div>
+ <div class="field full"><label for="nombre_comercio">Nombre del comercio *</label><input id="nombre_comercio" name="nombre_comercio" required minlength="2" maxlength="120" autocomplete="organization" placeholder="Nombre con el que tus clientes te conocen"></div>
+ <div class="field full"><label for="razon_social">Razón social *</label><input id="razon_social" name="razon_social" required minlength="2" maxlength="120" placeholder="Como aparece en los documentos legales"></div>
+ <div class="field full"><label for="ruc">RUC *</label><input id="ruc" name="ruc" required minlength="3" maxlength="50" placeholder="Número de Registro Único de Contribuyentes"></div>
+ <div class="field full"><label for="direccion">Dirección del comercio *</label><textarea id="direccion" name="direccion" required minlength="5" maxlength="350" rows="3" autocomplete="street-address" placeholder="Provincia, distrito, corregimiento y dirección del local"></textarea></div></div>
+ <h2 class="documents-heading">Documentos de la solicitud</h2><p class="section-intro">Adjunta documentos legibles, con todas sus páginas. Cada archivo puede pesar hasta 5 MB.</p><div id="file-fields" class="file-fields"></div><details class="review" open><summary>Revisar mis datos</summary><dl id="summary"></dl></details><label class="consent"><input type="checkbox" id="consentimiento" required><span>Estoy usando datos ficticios y entiendo que esta demostración no envía una solicitud a CMF. Consultar la <a href="PoliticasDePrivacidad.html" target="_blank" rel="noopener noreferrer">política de privacidad</a>.</span></label><p class="field-help">Enviar la solicitud no implica la aprobación de la afiliación.</p></fieldset>
+ <div id="form-message" class="message" role="alert" tabindex="-1" hidden></div><div id="upload-progress" class="upload-progress" role="status" aria-live="polite" hidden></div>
+ <div class="form-actions"><button type="button" class="button ghost" id="previous">Volver</button><button type="button" class="button primary" id="next">Continuar</button><button type="submit" class="button primary" id="submit" hidden>Enviar solicitud</button><button type="button" class="button secondary" id="check-status" hidden>Consultar estado</button></div>
+ </form></div></section>
+<section id="success" class="success" hidden><div class="success-symbol" aria-hidden="true">✓</div><p class="eyebrow">Prueba completada</p><h2>Así termina<br>el registro</h2><p>Has recorrido los dos pasos del formulario. Esta demostración no envió tus datos, no subió documentos y no creó un expediente en Drive.</p><div class="reference"><span>Referencia de demostración, sin validez</span><strong id="request-reference"></strong></div><p id="confirmation-email" class="field-help"></p><a href="index.html" class="button primary">Volver al inicio</a></section>
+<div id="service-error" class="service-error" role="alert" hidden></div><noscript><p class="service-error">Activa JavaScript para completar el registro.</p></noscript>
+</main><footer class="form-footer"><span>CMF · Comercios aliados</span><a href="PoliticasDePrivacidad.html">Política de privacidad</a></footer>
+</body></html>
