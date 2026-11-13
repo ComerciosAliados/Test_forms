@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Comparar tarjetas — CMF</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=26" rel="stylesheet"/>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- El menú se inyecta aquí desde include.js -->
+<div id="site-header"></div>
+<div id="app">
+<div class="view" id="view-comparar">
+<!-- Hero -->
+<section class="cmp-hero">
+<div class="cmp-badge">
+<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+      Encuentra tu tarjeta ideal
+    </div>
+<h1 class="cmp-hero-title">Compara y elige<em>la tarjeta perfecta</em></h1>
+<p class="cmp-hero-sub">4 productos, un solo lugar. Descubre cuál se adapta mejor a tu estilo de vida.</p>
+<div class="cmp-mini-cards">
+<div class="cmp-mini cmp-mini-gold"></div>
+<div class="cmp-mini cmp-mini-cmf"></div>
+<div class="cmp-mini cmp-mini-digital"></div>
+<div class="cmp-mini cmp-mini-joven"></div>
+<div class="cmp-mini cmp-mini-black"></div>
+</div>
+</section>
+<!-- Quiz -->
+<section class="cmp-quiz">
+<div class="cmp-quiz-inner">
+<div class="cmp-quiz-eyebrow">Recomendador inteligente</div>
+<h2 class="cmp-quiz-h">¿Cuál es mejor para ti?</h2>
+<p class="cmp-quiz-p">Selecciona tu prioridad y te encontramos el match perfecto en segundos.</p>
+<div class="cmp-quiz-opts">
+<button class="cmp-quiz-opt" onclick="cmfQuiz('gold',this)">
+<div class="cmp-quiz-opt-icon"><svg fill="none" height="18" stroke="var(--navy)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+<div class="cmp-quiz-opt-title">Viajes y beneficios</div>
+<div class="cmp-quiz-opt-desc">Quiero puntos, cobertura de viaje y beneficios premium</div>
+</button>
+<button class="cmp-quiz-opt" onclick="cmfQuiz('cmf',this)">
+<div class="cmp-quiz-opt-icon"><svg fill="none" height="18" stroke="var(--navy)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+<div class="cmp-quiz-opt-title">Compras en comercios</div>
+<div class="cmp-quiz-opt-desc">Compro seguido en la red de comercios aliados CMF</div>
+</button>
+<button class="cmp-quiz-opt" onclick="cmfQuiz('digital',this)">
+<div class="cmp-quiz-opt-icon"><svg fill="none" height="18" stroke="var(--navy)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><rect height="20" rx="2" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></div>
+<div class="cmp-quiz-opt-title">Enviar y ahorrar</div>
+<div class="cmp-quiz-opt-desc">Necesito enviar dinero, recargar y controlar mis gastos</div>
+</button>
+<button class="cmp-quiz-opt" onclick="cmfQuiz('joven',this)">
+<div class="cmp-quiz-opt-icon"><svg fill="none" height="18" stroke="var(--navy)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a6 6 0 0 1 12 0v2"></path></svg></div>
+<div class="cmp-quiz-opt-title">Mi primera tarjeta</div>
+<div class="cmp-quiz-opt-desc">Tengo 13–17 años y quiero aprender a manejar mi dinero</div>
+</button>
+</div>
+<div class="cmp-result" id="cmp-result">
+<div class="cmp-result-eyebrow">Tu match perfecto</div>
+<div class="cmp-result-name" id="cmp-result-name"></div>
+<div class="cmp-result-desc" id="cmp-result-desc"></div>
+<button class="cmp-result-cta" id="cmp-result-cta">Ver detalles →</button>
+</div>
+</div>
+</section>
+<!-- Cards Grid -->
+<section class="cmp-cards">
+<div class="cmp-cards-eyebrow">Todos los productos</div>
+<h2 class="cmp-cards-h">Nuestras tarjetas y cuentas</h2>
+<p class="cmp-cards-p">Toca cada tarjeta para explorar todos los detalles</p>
+<div class="cmp-grid">
+<!-- Gold -->
+<div class="cmp-card reveal">
+<div class="cmp-card-top cmp-card-gold">
+<div class="cmp-card-badge">Premium</div>
+<div class="cmp-card-img-wrap">
+<img alt="Mastercard Gold" class="cmp-card-img" id="cmpimg-gold" src="https://storage.googleapis.com/TU-BUCKET/tarjeta.png" style="filter:sepia(0.75) hue-rotate(15deg) saturate(2.2) brightness(1.05)"/>
+</div>
+</div>
+<div class="cmp-card-body">
+<div class="cmp-card-name">Mastercard Gold</div>
+<div class="cmp-card-tagline">Puntos C+ · Viajes · Beneficios premium</div>
+<ul class="cmp-card-feats">
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Puntos C+ en cada compra</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Cobertura de viaje incluida</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>12 meses sin recargo</li>
+</ul>
+<div class="cmp-card-price"><strong>$0</strong> anualidad el 1er año</div>
+<div class="cmp-card-actions">
+<button class="cmp-btn-solid">Solicitar</button>
+<button class="cmp-btn-outline" onclick="navigate('mastercard-gold')">Ver más</button>
+</div>
+</div>
+</div>
+<!-- CMF -->
+<div class="cmp-card reveal">
+<div class="cmp-card-top cmp-card-cmf">
+<div class="cmp-card-badge">Popular</div>
+<div class="cmp-card-img-wrap">
+<img alt="Tarjeta CMF" class="cmp-card-img" id="cmpimg-cmf" src="https://storage.googleapis.com/TU-BUCKET/tarjeta.png"/>
+</div>
+</div>
+<div class="cmp-card-body">
+<div class="cmp-card-name">Tarjeta CMF</div>
+<div class="cmp-card-tagline">Comercios aliados · Hasta 24 cuotas</div>
+<ul class="cmp-card-feats">
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>+200 comercios aliados en Panamá</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Hasta 24 meses sin recargo</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>100% digital desde la app</li>
+</ul>
+<div class="cmp-card-price"><strong>$0</strong> membresía</div>
+<div class="cmp-card-actions">
+<button class="cmp-btn-solid">Solicitar</button>
+<button class="cmp-btn-outline" onclick="navigate('cmf-card')">Ver más</button>
+</div>
+</div>
+</div>
+<!-- Digital -->
+<div class="cmp-card reveal">
+<div class="cmp-card-top cmp-card-digital">
+<div class="cmp-card-badge">Sin costo</div>
+<div class="cmp-card-img-wrap">
+<img alt="Cuenta Digital" class="cmp-card-img" id="cmpimg-digital" src="https://storage.googleapis.com/TU-BUCKET/tarjeta.png" style="filter:hue-rotate(60deg) saturate(1.05) brightness(0.97)"/>
+</div>
+</div>
+<div class="cmp-card-body">
+<div class="cmp-card-name">Cuenta Digital</div>
+<div class="cmp-card-tagline">Transferencias gratis · Pagos QR</div>
+<ul class="cmp-card-feats">
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Transferencias $0 a cualquier banco</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Sin saldo mínimo requerido</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Pagos con QR al instante</li>
+</ul>
+<div class="cmp-card-price"><strong>$0</strong> mantenimiento siempre</div>
+<div class="cmp-card-actions">
+<button class="cmp-btn-solid">Solicitar</button>
+<button class="cmp-btn-outline" onclick="navigate('digital-account')">Ver más</button>
+</div>
+</div>
+</div>
+<!-- Black -->
+<div class="cmp-card reveal">
+<div class="cmp-card-top cmp-card-black-top">
+<div class="cmp-card-badge">Exclusivo</div>
+<div class="cmp-card-img-wrap">
+<img alt="Mastercard Black" class="cmp-card-img" data-src-from-master="true" id="cmpimg-black" src="https://storage.googleapis.com/TU-BUCKET/tarjeta.png" style="filter:grayscale(1) brightness(0.28) contrast(1.15)"/>
+</div>
+</div>
+<div class="cmp-card-body">
+<div class="cmp-card-name">Mastercard Black</div>
+<div class="cmp-card-tagline">Puntos dobles · Salas VIP · Concierge</div>
+<ul class="cmp-card-feats">
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Puntos C+ dobles en cada compra</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Acceso a salas VIP en aeropuertos</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>18 meses sin recargo</li>
+</ul>
+<div class="cmp-card-price"><strong>$0</strong> anualidad el 1er año</div>
+<div class="cmp-card-actions">
+<button class="cmp-btn-solid">Solicitar</button>
+<button class="cmp-btn-outline" onclick="navigate('mastercard-black')">Ver más</button>
+</div>
+</div>
+</div>
+<!-- Joven -->
+<div class="cmp-card reveal">
+<div class="cmp-card-top cmp-card-joven">
+<div class="cmp-card-badge">Desde 13 años</div>
+<div class="cmp-card-img-wrap">
+<img alt="Cuenta Digital Joven" class="cmp-card-img" id="cmpimg-joven" src="https://storage.googleapis.com/TU-BUCKET/tarjeta.png" style="filter:hue-rotate(150deg) saturate(0.9) brightness(1.08)"/>
+</div>
+</div>
+<div class="cmp-card-body">
+<div class="cmp-card-name">Cuenta Digital Joven</div>
+<div class="cmp-card-tagline">Control parental · Metas de ahorro</div>
+<ul class="cmp-card-feats">
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Disponible desde los 13 años</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Control parental total desde la app</li>
+<li><svg fill="none" height="13" stroke="var(--lima2)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><polyline points="20 6 9 17 4 12"></polyline></svg>Metas digitales de ahorro</li>
+</ul>
+<div class="cmp-card-price"><strong>$0</strong> mantenimiento siempre</div>
+<div class="cmp-card-actions">
+<button class="cmp-btn-solid">Solicitar</button>
+<button class="cmp-btn-outline" onclick="navigate('youth-account')">Ver más</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="cmp-table-section">
+<div class="cmp-table-eyebrow">Tabla comparativa</div>
+<h2 class="cmp-table-h">¿En qué se diferencian?</h2>
+<p class="cmp-table-p">Compara las características clave de cada producto</p>
+<div class="cmp-table-scroll">
+<table class="cmp-tbl">
+<thead>
+<tr>
+<th>Característica</th>
+<th class="cmp-th-gold">Mastercard Gold</th>
+<th class="cmp-th-cmf">Tarjeta CMF</th>
+<th class="cmp-th-digital">Cuenta Digital</th>
+<th class="cmp-th-joven">Cuenta Joven</th>
+<th class="cmp-th-black">Mastercard Black</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Anualidad / Costo</td><td><span class="cmp-v">$0 1er año<br/>$35 después</span></td><td><span class="cmp-v">$0 1er año</span></td><td><span class="cmp-v">$0 siempre</span></td><td><span class="cmp-v">$0 siempre</span></td></tr>
+<tr><td>Tasa de interés</td><td><span class="cmp-v">Desde 18% TEA</span></td><td><span class="cmp-v">Desde 20% TEA</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td></tr>
+<tr><td>Cuotas sin recargo</td><td><span class="cmp-v">12 meses</span></td><td><span class="cmp-v">24 meses</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-v">18 meses</span></td></tr>
+<tr><td>Puntos C+</td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓ x2</span></td></tr>
+<tr><td>Cobertura de viaje</td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓ Premium</span></td></tr>
+<tr><td>Cobertura internacional</td><td><span class="cmp-yes">✓ Mastercard</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓ Mastercard</span></td></tr>
+<tr><td>Transferencias gratis</td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-v">Con límites</span></td></tr>
+<tr><td>Pagos con QR</td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-no">—</span></td></tr>
+<tr><td>Control parental</td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-no">—</span></td></tr>
+<tr><td>Metas de ahorro</td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-no">—</span></td><td><span class="cmp-yes">✓</span></td><td><span class="cmp-no">—</span></td></tr>
+<tr><td>Edad mínima</td><td><span class="cmp-v">18 años</span></td><td><span class="cmp-v">18 años</span></td><td><span class="cmp-v">18 años</span></td><td><span class="cmp-v">13 años</span></td></tr>
+<tr><td>Ideal para</td><td><span class="cmp-v">Viajero premium</span></td><td><span class="cmp-v">Comprador frecuente</span></td><td><span class="cmp-v">Ahorrador digital</span></td><td><span class="cmp-v">Jóvenes 13-17</span></td><td><span class="cmp-v">Ejecutivo exclusivo</span></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="cmp-bottom">
+<div class="cmp-bottom-eyebrow">¿Listo para empezar?</div>
+<h2 class="cmp-bottom-h">Solicita tu tarjeta<br/>en 5 minutos</h2>
+<p class="cmp-bottom-p">100% digital. Sin filas, sin papeleos.</p>
+<button class="cmp-bottom-btn">Solicitar ahora →</button>
+</section>
+</div>
+</div>
+<!-- El pie de página se inyecta aquí desde include.js -->
+<div id="site-footer"></div>
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+</body>
+</html>

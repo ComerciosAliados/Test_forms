@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Registra tu comercio — CMF</title>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=29" rel="stylesheet"/>
+
+<style>
+  /* ===== Formulario de registro (diseño propio, no Google) ===== */
+  .reg-card{background:#fff;border-radius:18px;padding:clamp(20px,4vw,34px);max-width:760px;margin:0 auto;
+    box-shadow:0 20px 50px rgba(1,30,65,.15)}
+  .reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .reg-field{display:flex;flex-direction:column}
+  .reg-field.full{grid-column:1 / -1}
+  .reg-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .reg-label .req{color:var(--lime2,#7ab800)}
+  .reg-input{font:inherit;font-size:15px;color:#1b2a3d;padding:12px 14px;border:1.5px solid #d7dde6;
+    border-radius:10px;background:#fff;width:100%;transition:border-color .15s,box-shadow .15s}
+  .reg-input::placeholder{color:#9aa6b4}
+  .reg-input:focus{outline:none;border-color:var(--lime,#93D500);box-shadow:0 0 0 3px rgba(147,213,0,.18)}
+  .reg-btn{grid-column:1 / -1;margin-top:6px;font:inherit;font-weight:800;font-size:16px;cursor:pointer;
+    background:var(--lime,#93D500);color:var(--navy);border:none;border-radius:12px;padding:15px 20px;min-height:52px;
+    transition:transform .1s,background .15s}
+  .reg-btn:hover{background:var(--lime2,#7ab800)}
+  .reg-btn:active{transform:translateY(1px)}
+  .reg-note{grid-column:1/-1;text-align:center;font-size:12px;color:#8a97a6;margin:4px 0 0}
+  .reg-thanks{display:none;text-align:center;padding:20px 6px}
+  .reg-thanks h3{color:var(--navy);font-size:22px;margin:0 0 8px}
+  .reg-thanks p{color:#5a6b7d;margin:0}
+  .reg-check{width:64px;height:64px;border-radius:50%;background:rgba(147,213,0,.15);display:flex;align-items:center;
+    justify-content:center;margin:0 auto 14px;font-size:34px;color:var(--lime2,#7ab800)}
+  .is-sent .reg-form{display:none}
+  .is-sent .reg-thanks{display:block}
+  @media (max-width:560px){ .reg-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div id="site-header"></div>
+
+<div id="app">
+<div class="view" id="view-registrar-comercio">
+<div class="view-hero">
+<div class="view-hero-inner">
+<div class="section-label">Comercios aliados</div>
+<h1>Registra <em>tu comercio</em></h1>
+<p>Déjanos tus datos y nuestro equipo te contactará.</p>
+</div>
+</div>
+<div class="view-content">
+<div class="view-content-inner">
+
+<div class="reg-card reveal" id="reg-card">
+
+  <!--
+    IMPORTANTE: reemplaza los "entry.XXXXXXX" por los códigos reales
+    de tu Google Form (ver instrucciones al final). El resto ya funciona.
+  -->
+  <form class="reg-form reg-grid"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSdRX9VY_9a07anmYVTYq-4DU9jbQc2G2xBLyPCFVuh9O3awPQ/formResponse"
+        method="POST"
+        target="reg-oculto"
+        onsubmit="setTimeout(function(){document.getElementById('reg-card').classList.add('is-sent')},300)">
+
+    <div class="reg-field">
+      <label class="reg-label" for="r-nombre">Nombre <span class="req">*</span></label>
+      <input class="reg-input" id="r-nombre" name="entry.970021939" placeholder="Tu nombre" required>
+    </div>
+    <div class="reg-field">
+      <label class="reg-label" for="r-apellido">Apellido <span class="req">*</span></label>
+      <input class="reg-input" id="r-apellido" name="entry.1827561359" placeholder="Tu apellido" required>
+    </div>
+    <div class="reg-field">
+      <label class="reg-label" for="r-celular">Número de celular <span class="req">*</span></label>
+      <input class="reg-input" id="r-celular" name="entry.1878814091" type="tel" inputmode="tel" placeholder="6000-0000" required>
+    </div>
+    <div class="reg-field">
+      <label class="reg-label" for="r-correo">Correo electrónico <span class="req">*</span></label>
+      <input class="reg-input" id="r-correo" name="entry.817396080" type="email" placeholder="tucorreo@ejemplo.com" required>
+    </div>
+    <div class="reg-field full">
+      <label class="reg-label" for="r-comercio">Nombre del comercio <span class="req">*</span></label>
+      <input class="reg-input" id="r-comercio" name="entry.1549461562" placeholder="Nombre de tu negocio" required>
+    </div>
+    <div class="reg-field full">
+      <label class="reg-label" for="r-direccion">Dirección del comercio <span class="req">*</span></label>
+      <input class="reg-input" id="r-direccion" name="entry.1302107094" placeholder="Provincia, ciudad, calle…" required>
+    </div>
+
+    <button class="reg-btn" type="submit">Enviar solicitud</button>
+    <p class="reg-note">* Todos los campos son obligatorios.</p>
+  </form>
+
+  <div class="reg-thanks">
+    <div class="reg-check">✓</div>
+    <h3>¡Gracias por tu interés!</h3>
+    <p>Recibimos tus datos. Nuestro equipo te contactará pronto.</p>
+  </div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- iframe oculto: recibe la respuesta de Google para que la página NO se redirija -->
+<iframe name="reg-oculto" style="display:none" title="oculto"></iframe>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+</body>
+</html>

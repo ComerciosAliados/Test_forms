@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Promociones — CMF</title>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=26" rel="stylesheet"/>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- El menú se inyecta aquí desde include.js -->
+<div id="site-header"></div>
+
+<div id="app">
+<div class="view" id="view-promociones">
+<div class="view-hero">
+<div class="view-hero-inner">
+<div class="section-label">Exclusivo para ti</div>
+<h1>Tus <em>promociones</em> activas</h1>
+<p>Descuentos y beneficios exclusivos en tu red de comercios favoritos.</p>
+</div>
+</div>
+<div class="view-content">
+<div class="view-content-inner">
+<div class="promo-selects">
+<div class="promo-select-wrap">
+<label class="promo-select-label">Producto</label>
+<select class="promo-select" onchange="filterPromos(this.value)">
+<option value="all">Todas</option>
+<option value="gold">Gold</option>
+<option value="cmf">Tarjeta CMF</option>
+<option value="digital">Cuenta Digital</option>
+<option value="joven">Joven</option>
+</select>
+</div>
+<div class="promo-select-wrap">
+<label class="promo-select-label">Categoría</label>
+<select class="promo-select" onchange="filterCat(this.value)">
+<option value="all">Todas</option>
+<option value="restaurante">Restaurantes</option>
+<option value="hogar">Hogar</option>
+<option value="supermercado">Supermercados</option>
+<option value="farmacia">Farmacias</option>
+<option value="autos">Autos</option>
+<option value="deporte">Deporte</option>
+<option value="digital-cat">Digital</option>
+</select>
+</div>
+</div>
+<div class="promo-grid" id="promo-grid">
+<div class="promo-card" data-cat="hogar" data-tags="gold,cmf">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#011e41,#0a2248)">NOVEY</div>
+<div class="promo-card-body">
+<div class="promo-discount">15% OFF</div>
+<div class="promo-merchant">Novey</div>
+<div class="promo-desc">Herramientas y hogar</div>
+<div class="promo-tags"><span class="promo-tag">Gold</span><span class="promo-tag">Tarjeta CMF</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="hogar" data-tags="gold,cmf,digital,joven">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#026e18,#011e41)">COCHEZ</div>
+<div class="promo-card-body">
+<div class="promo-discount">10% OFF</div>
+<div class="promo-merchant">Cochez</div>
+<div class="promo-desc">Ferretería y construcción</div>
+<div class="promo-tags"><span class="promo-tag">Todas</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="hogar" data-tags="gold,cmf">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#009ea8,#011e41)">KOHLER</div>
+<div class="promo-card-body">
+<div class="promo-discount">20% OFF</div>
+<div class="promo-merchant">Kohler</div>
+<div class="promo-desc">Baños y cocinas de lujo</div>
+<div class="promo-tags"><span class="promo-tag">Gold</span><span class="promo-tag">Tarjeta CMF</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="digital-cat" data-tags="digital">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#26e0bb,#009ea8)">DIGITAL</div>
+<div class="promo-card-body">
+<div class="promo-discount">5% BACK</div>
+<div class="promo-merchant">Compras digitales</div>
+<div class="promo-desc">Cashback en línea</div>
+<div class="promo-tags"><span class="promo-tag">Cuenta Digital</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="deporte" data-tags="gold">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#93d500,#026e18)">DEPORTE</div>
+<div class="promo-card-body">
+<div class="promo-discount">12% OFF</div>
+<div class="promo-merchant">Deportes</div>
+<div class="promo-desc">Ropa y calzado deportivo</div>
+<div class="promo-tags"><span class="promo-tag">Gold</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="restaurante" data-tags="cmf">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#c0392b,#7d0000)">REST.</div>
+<div class="promo-card-body">
+<div class="promo-discount">2x1</div>
+<div class="promo-merchant">Restaurantes</div>
+<div class="promo-desc">Dos por uno los viernes</div>
+<div class="promo-tags"><span class="promo-tag">Tarjeta CMF</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="farmacia" data-tags="gold,cmf,digital,joven">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#7ab800,#026e18)">FARMA</div>
+<div class="promo-card-body">
+<div class="promo-discount">8% OFF</div>
+<div class="promo-merchant">Farmacias</div>
+<div class="promo-desc">Medicamentos y cuidado personal</div>
+<div class="promo-tags"><span class="promo-tag">Todas</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="supermercado" data-tags="digital">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#0a2248,#26e0bb)">SUPER</div>
+<div class="promo-card-body">
+<div class="promo-discount">3% BACK</div>
+<div class="promo-merchant">Supermercados</div>
+<div class="promo-desc">Cashback semanal</div>
+<div class="promo-tags"><span class="promo-tag">Cuenta Digital</span></div>
+</div>
+</div>
+<div class="promo-card" data-cat="autos" data-tags="gold,cmf">
+<div class="promo-card-top" style="background:linear-gradient(135deg,#54565a,#020f22)">COMBO</div>
+<div class="promo-card-body">
+<div class="promo-discount">5% DESC</div>
+<div class="promo-merchant">Combustible</div>
+<div class="promo-desc">En estaciones aliadas</div>
+<div class="promo-tags"><span class="promo-tag">Gold</span><span class="promo-tag">Tarjeta CMF</span></div>
+</div>
+</div>
+</div>
+<!-- Loyalty Banner -->
+<div class="loyalty-banner reveal">
+<h3>⭐ Puntos C+ en cada compra</h3>
+<p>Con tu Mastercard Gold CMF, acumulas puntos C+ automáticamente en cada compra. Canjéalos por premios, viajes, descuentos y mucho más desde CMF App.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- El pie de página se inyecta aquí desde include.js -->
+<div id="site-footer"></div>
+
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+</body>
+</html>

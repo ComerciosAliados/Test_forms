@@ -1,0 +1,138 @@
+<!-- Banda de marcas del grupo (editar aquí; se refleja en todas las páginas) -->
+<div class="brand-strip">
+<div class="brand-strip__inner">
+<!-- Franja de marcas: reemplaza los src por los logos reales y los href por los enlaces definitivos -->
+<a class="brand-strip__logo" href="https://www.novey.com.pa" target="_blank" rel="noopener noreferrer"><img src="https://storage.googleapis.com/web-cmf/comercios/novey-logo.png" alt="Novey"></a>
+<span class="brand-strip__divider"></span>
+<a class="brand-strip__logo" href="https://www.cochezycia.com" target="_blank" rel="noopener noreferrer"><img src="https://storage.googleapis.com/web-cmf/comercios/logocochez.png" alt="Cochez"></a>
+<span class="brand-strip__divider"></span>
+<a class="brand-strip__logo" href="https://kohlerbycochez.com/" target="_blank" rel="noopener noreferrer"><img src="https://storage.googleapis.com/web-cmf/comercios/logokholer.png" alt="Kohler by Cochez"></a>
+<span class="brand-strip__divider"></span>
+<a class="brand-strip__logo" href="https://puntocochez.com" target="_blank" rel="noopener noreferrer"><img src="https://storage.googleapis.com/web-cmf/comercios/puntocochez.png" alt="Punto Cochez"></a>
+<span class="brand-strip__divider"></span>
+<a class="brand-strip__logo brand-strip__logo--active" href="#" onclick="navigate('home');return false;"><img src="https://storage.googleapis.com/web-cmf/images/INDEX/LOGO_CMF.png" alt="CMF"></a>
+</div>
+</div>
+<!-- Menú (diseño nuevo). Editar aquí se refleja en todas las páginas -->
+<nav class="nav">
+<div class="nav-inner">
+<div class="nav-logo" onclick="navigate('home')">
+<img alt="CMF" class="nav-logo-img" src="assets/img/cmf-logo.png"/>
+</div>
+<div class="nav-links">
+<button class="nav-link" data-view="home" onclick="navigate('home');return false;">Inicio</button>
+<div class="dropdown">
+<button class="nav-link" data-view="productos">Productos <span class="caret">▾</span></button>
+<div class="dropdown-menu">
+<div class="dropdown-item" onclick="navigate('mastercard-gold')" style="background:linear-gradient(135deg,rgba(235,0,27,0.06),rgba(247,158,27,0.06))">
+<span class="di-icon" style="background:linear-gradient(135deg,#eb001b,#f79e1b);border-radius:8px"><svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></span><div><div style="font-weight:700">Tarjeta de crédito Mastercard</div><div style="font-size:12px;opacity:0.6">Cuotas, Puntos C+ y más</div></div>
+</div>
+<div class="dropdown-item" onclick="navigate('cmf-card')">
+<span class="di-icon"><svg fill="none" height="24" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></span><div><div style="font-weight:700">Tarjeta de crédito CMF</div><div style="font-size:12px;opacity:0.6">Red de comercios aliados</div></div>
+</div>
+<div class="dropdown-item" onclick="location.href='index.html#prod=digital'">
+<span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></span><div><div style="font-weight:700">Cuenta Digital</div><div style="font-size:12px;opacity:0.6">Sin anualidad ni filas</div></div>
+</div>
+<div class="dropdown-item" onclick="navigate('compare-cards')">
+<span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="3" y="14"></rect><rect height="7" width="7" x="14" y="14"></rect></svg></span><div><div style="font-weight:700">Comparar tarjetas</div><div style="font-size:12px;opacity:0.6">Encuentra la mejor para ti</div></div>
+</div>
+<div class="dropdown-item" onclick="location.href='index.html#prod=joven'">
+<span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M17 8C8 10 5.9 16.17 3.82 22"></path><path d="M3.82 22a15.94 15.94 0 0 1 1.18-2c.93-1.16 2.6-2.65 4.89-3.53 2.82-1.1 5.33-.9 7.11 0"></path></svg></span><div><div style="font-weight:700">Cuenta Digital Joven</div><div style="font-size:12px;opacity:0.6">Para jóvenes desde 13 años</div></div>
+</div>
+<div class="dropdown-item" onclick="navigate('seguros')">
+<span class="di-icon"><svg fill="none" height="24" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span><div><div style="font-weight:700">Seguros</div><div style="font-size:12px;opacity:0.6">Vida, viaje, accidentes y más</div></div>
+</div>
+</div>
+</div>
+<div class="dropdown">
+<button class="nav-link" data-view="herramientas">Herramientas <span class="caret">▾</span></button>
+<div class="dropdown-menu">
+<div class="dropdown-item" onclick="navigate('tools')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg></span><div>Calculadora</div></div>
+<div class="dropdown-item" onclick="navigate('tools')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></span><div>Refinanciamiento</div></div>
+<div class="dropdown-item" onclick="navigate('tools')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span><div>Crédito adicional</div></div>
+<div class="dropdown-item" onclick="navigate('merchants')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><div>Portal de comercios</div></div>
+</div>
+</div>
+<button class="nav-link" data-view="promociones" onclick="navigate('promotions');return false;">Promociones</button>
+<button class="nav-link" data-view="comercios" onclick="navigate('merchants');return false;">Comercios</button>
+<div class="dropdown">
+<button class="nav-link" data-view="aprende">Aprende <span class="caret">▾</span></button>
+<div class="dropdown-menu">
+<div class="dropdown-item" onclick="navigate('how-to-use')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="20" rx="2" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></span><div>Cómo usar la app</div></div>
+<div class="dropdown-item" onclick="navigate('faq')"><span class="di-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><div>Preguntas frecuentes</div></div>
+</div>
+</div>
+</div>
+<div class="nav-actions">
+<a href="https://portal.cmf.com.pa/onboarding/cardrequest/startpoint-landing" class="btn-abrir">Solicitar ahora</a>
+<a href="https://portal.cmf.com.pa/site" class="btn-ingresar">CMF en línea</a>
+<a href="https://portal.cmf.com.pa/alliedbusinesses/login" class="btn-ingresar">Portal de Comercios Aliados</a>
+</div>
+<button aria-label="Menu" class="nav-hamburger" onclick="toggleMobile()">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-menu-backdrop" id="mobile-backdrop" onclick="closeMobile()"></div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu-header">
+<span style="font-size:15px;font-weight:700;color:var(--white);letter-spacing:-0.2px">Menú</span>
+<button aria-label="Cerrar menú" class="mobile-menu-close" onclick="closeMobile()">✕</button>
+</div>
+<div class="mobile-section-label">Para ti</div>
+<!-- Productos expandable -->
+<div class="mob-expand-head" onclick="toggleMobExpand(this,'mob-prod-list')">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg></span>
+<span>Productos</span>
+<span class="mob-expand-chevron"><svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+</div>
+<div class="mob-expand-body" id="mob-prod-list">
+<div class="mobile-link mobile-link-sub" onclick="navigate('mastercard-gold');closeMobile()">
+<span class="mobile-link-icon" style="background:rgba(201,162,39,0.13)"><svg fill="none" height="15" stroke="#c9a227" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></span>Tarjeta de crédito Mastercard</div>
+<div class="mobile-link mobile-link-sub" onclick="navigate('cmf-card');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="16" rx="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></span>Tarjeta de crédito CMF
+    </div>
+<div class="mobile-link mobile-link-sub" onclick="navigate('digital-account');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="20" rx="2" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></span>Cuenta Digital
+    </div>
+<div class="mobile-link mobile-link-sub" onclick="navigate('seguros');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>Seguros
+    </div>
+</div><!-- /mob-prod-list -->
+<div class="mobile-link" onclick="navigate('loan-simulator');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg></span>Simulador de cuotas
+  </div>
+<!-- <div class="mobile-link" onclick="navigate('promotions');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M20 12v10H4V12"></path><rect height="5" width="20" x="2" y="7"></rect><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg></span>Promociones y descuentos
+  </div> -->
+<div class="mobile-section-label">Para tu negocio</div>
+<div class="mobile-link" onclick="navigate('merchants-info');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg></span>Cómo unirse
+  </div>
+<!-- <div class="mobile-link" onclick="navigate('become-a-merchant');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>Cómo unirse
+  </div> -->
+<div class="mobile-link" onclick="navigate('allied-merchants');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>Comercios aliados
+  </div>
+<div class="mobile-section-label">Centro de ayuda</div>
+<div class="mobile-link" onclick="navigate('faq');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" x2="12.01" y1="17" y2="17"></line></svg></span>Preguntas frecuentes
+  </div>
+<div class="mobile-link" onclick="navigate('how-to-use');closeMobile()">
+<span class="mobile-link-icon"><svg fill="none" height="15" stroke="var(--lima)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="15"><rect height="20" rx="2" width="14" x="5" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></span>Cómo usar la app
+  </div>
+<div class="mobile-menu-footer">
+<a href="https://portal.cmf.com.pa/onboarding/cardrequest/startpoint-landing" class="btn-abrir" onclick="closeMobile()" style="cursor:pointer;width:100%;font-family:inherit;text-align:center">Solicitar ahora</a>
+<a href="https://portal.cmf.com.pa/site" class="btn-ingresar" onclick="closeMobile()" style="cursor:pointer;width:100%;font-family:inherit;text-align:center">CMF en línea</a>    
+<a href="https://portal.cmf.com.pa/alliedbusinesses/login" class="btn-ingresar" onclick="closeMobile()" style="cursor:pointer;width:100%;font-family:inherit;text-align:center">Portal de Comercios Aliados</a> 
+</div>
+</div>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->

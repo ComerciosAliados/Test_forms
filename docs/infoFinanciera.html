@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Información Financiera — CMF</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=35" rel="stylesheet"/>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- El menú se inyecta aquí desde include.js -->
+<div id="site-header"></div>
+
+<div id="app">
+<div class="view" id="view-info-financiera">
+
+<div class="view-hero">
+<div class="view-hero-inner">
+<div class="section-label"></div>
+<h1>Información <em>financiera</em></h1>
+<p></p>
+</div>
+</div>
+
+<div class="view-content">
+<div class="view-content-inner">
+<h2 class="pdp-section-title" style="font-size:clamp(20px,5vw,26px);margin:0 0 6px">Reportes financieros</h2>
+<p class="sub"></p>
+
+<!-- Las tarjetas se generan solas desde la lista de abajo -->
+<div id="fin-list"></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- El pie de página se inyecta aquí desde include.js -->
+<div id="site-footer"></div>
+
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+
+<script>
+/* =================================================================
+   REPORTES FINANCIEROS
+   Para agregar uno nuevo: añade una línea a la lista con
+   { periodo:"AAAA-MM", tipo:"INT" | "INA", url:"ENLACE_AL_PDF" }
+   (INT = interino, INA = anual auditado). Se ordena y agrupa solo.
+   ================================================================= */
+var REPORTES = [
+  { periodo:"2026-06", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2026-06%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2026-03", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2026-03%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2025-12", tipo:"INA", url:"https://storage.googleapis.com/web-cmf/images/2025-12%20INA%20CM%20FINANCIERA.pdf" },
+  { periodo:"2025-12", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2025-12%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2025-09", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2025-09%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2025-06", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2025-06%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2025-03", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2025-03%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2024-12", tipo:"INA", url:"https://storage.googleapis.com/web-cmf/images/2024-12%20INA%20CM%20FINANCIERA.pdf" },
+  { periodo:"2024-12", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2024-12%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2024-09", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2024-09%20INT%20CM%20FINANCIERA.pdf" },
+  { periodo:"2024-06", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2024_06_INT_CM_Financiera.pdf" },
+  { periodo:"2024-03", tipo:"INT", url:"https://storage.googleapis.com/web-cmf/images/2024_03_INT_CM_Financiera.pdf" }
+];
+
+(function () {
+  var MESES = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  var TIPOS = { INT:"Estado financiero interino", INA:"Estado financiero anual (auditado)" };
+  var FILE = '<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>';
+  var DL   = '<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>';
+
+  // ordenar: más reciente primero (periodo desc; anual antes que interino en el mismo mes)
+  REPORTES.sort(function (a, b) {
+    if (a.periodo !== b.periodo) return a.periodo < b.periodo ? 1 : -1;
+    return (a.tipo === "INA" ? 0 : 1) - (b.tipo === "INA" ? 0 : 1);
+  });
+
+  var cont = document.getElementById("fin-list");
+  var htmlPorAnio = {};
+  var orden = [];
+  REPORTES.forEach(function (r) {
+    var anio = r.periodo.slice(0, 4);
+    var mes = parseInt(r.periodo.slice(5, 7), 10);
+    if (!htmlPorAnio[anio]) { htmlPorAnio[anio] = []; orden.push(anio); }
+    htmlPorAnio[anio].push(
+      '<a class="fin-card" href="' + r.url + '" target="_blank" rel="noopener noreferrer">' +
+        '<span class="fin-ic">' + FILE + '</span>' +
+        '<span class="fin-info">' +
+          '<span class="fin-title">' + MESES[mes] + ' ' + anio + '</span>' +
+          '<span class="fin-sub">' + (TIPOS[r.tipo] || r.tipo) + '</span>' +
+        '</span>' +
+        '<span class="fin-dl">' + DL + '</span>' +
+      '</a>'
+    );
+  });
+
+  var out = "";
+  orden.forEach(function (anio) {
+    out += '<div class="fin-year">' + anio + '</div><div class="fin-grid">' + htmlPorAnio[anio].join("") + '</div>';
+  });
+  cont.innerHTML = out;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Simulador de cuotas — CMF</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=37" rel="stylesheet"/>
+<style>
+/* ===== Calculadora (aislada bajo .sim-widget) ===== */
+.sim-widget{font-family:'Red Hat Text',sans-serif}
+:root{
+      --primary: rgba(1, 30, 65, 1);
+      --primary-strong: rgba(1, 30, 65, 0.94);
+      --primary-soft: rgba(1, 30, 65, 0.06);
+      --primary-border: rgba(1, 30, 65, 0.12);
+      --bg: #f4f7fb;
+      --text: #162033;
+      --muted: #667085;
+      --white: #ffffff;
+      --success-soft: rgba(88, 185, 71, 0.12);
+      --success-text: #3d9440;
+      --shadow-lg: 0 24px 60px rgba(1, 30, 65, 0.14);
+      --shadow-md: 0 12px 30px rgba(1, 30, 65, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 14px;
+    }
+.sim-widget .brand-title{
+      margin: 0;
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+.sim-widget .logo img{
+      height: clamp(38px, 5vw, 60px);
+      width: auto;
+      display: block;
+    }
+.sim-widget .wrapper{
+      width: min(1360px, calc(100% - 28px));
+      margin: 34px auto;
+    }
+.sim-widget .layout{
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+.sim-widget .panel{
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      padding: 42px;
+      backdrop-filter: blur(8px);
+    }
+.sim-widget .eyebrow{
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--success-soft);
+      color: var(--success-text);
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+.sim-widget .simhero h1{
+      margin: 0 0 20px;
+      color: var(--primary);
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 720px;
+    }
+.sim-widget .simhero p{
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
+      line-height: 1.75;
+      max-width: 760px;
+    }
+.sim-widget .hero-points{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 700px;
+    }
+.sim-widget .hero-point{
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-md);
+    }
+.sim-widget .hero-point strong{
+      display: block;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+.sim-widget .hero-point span{
+      display: block;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+.sim-widget .simulator h2{
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+.sim-widget .simulator p{
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+.sim-widget .form-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+.sim-widget .field{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+.sim-widget .field label{
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+.sim-widget .input-wrap{
+      position: relative;
+    }
+.sim-widget .currency{
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 1rem;
+      pointer-events: none;
+    }
+.sim-widget input, .sim-widget select{
+      width: 100%;
+      height: 66px;
+      border-radius: 20px;
+      border: 1px solid var(--primary-border);
+      background: var(--white);
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+.sim-widget input{
+      padding: 16px 18px 16px 52px;
+    }
+.sim-widget select{
+      padding: 16px 48px 16px 18px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, var(--primary) 50%), linear-gradient(135deg, var(--primary) 50%, transparent 50%);
+      background-position: calc(100% - 28px) calc(50% - 3px), calc(100% - 21px) calc(50% - 3px);
+      background-size: 7px 7px, 7px 7px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+.sim-widget input:focus, .sim-widget select:focus{
+      border-color: rgba(1, 30, 65, 0.3);
+      box-shadow: 0 0 0 4px rgba(1, 30, 65, 0.08);
+      transform: translateY(-1px);
+    }
+.sim-widget .actions{
+      display: flex;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+.sim-widget button{
+      min-height: 62px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 900;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+    }
+.sim-widget button:hover{
+      transform: translateY(-1px);
+    }
+.sim-widget .btn-primary{
+      flex: 1.2;
+      background: linear-gradient(135deg, var(--primary) 0%, rgba(1, 30, 65, 0.88) 100%);
+      color: white;
+      box-shadow: 0 16px 30px rgba(1, 30, 65, 0.18);
+    }
+.sim-widget .btn-secondary{
+      flex: 0.8;
+      background: #eef1f5;
+      color: var(--primary);
+    }
+.sim-widget .results{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.sim-widget .result-card{
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--primary-border);
+      text-align: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 10px 24px rgba(1, 30, 65, 0.06);
+    }
+.sim-widget .result-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(1, 30, 65, 0.1);
+    }
+.sim-widget .result-card.highlight{
+      background: linear-gradient(135deg, rgba(1, 30, 65, 1) 0%, rgba(1, 30, 65, 0.9) 100%);
+      color: white;
+      border: none;
+    }
+.sim-widget .result-label{
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #667085;
+    }
+.sim-widget .result-card.highlight .result-label, .sim-widget .result-card.highlight .result-value, .sim-widget .result-card.highlight .result-note{
+      color: white;
+    }
+.sim-widget .result-value{
+  display: block;
+  color: var(--primary);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.sim-widget .result-note{
+      display: block;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+.sim-widget .pop{
+      animation: popValue 0.35s ease;
+    }
+@media (max-width: 1100px){.sim-widget .layout{
+        grid-template-columns: 1fr;
+      }}
+@media (max-width: 768px){.sim-widget .wrapper{
+        width: min(100%, calc(100% - 16px));
+        margin: 18px auto;
+      }
+.sim-widget .panel{
+        padding: 22px 18px;
+      }
+.sim-widget .simhero h1, .sim-widget .simulator h2{
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+.sim-widget .hero-points, .sim-widget .form-grid, .sim-widget .results{
+        grid-template-columns: 1fr;
+      }
+.sim-widget .actions{
+        flex-direction: column;
+      }
+.sim-widget button{
+        width: 100%;
+      }
+.sim-widget input, .sim-widget select{
+        font-size: 16px;
+      }}
+
+/* === Ajuste a la identidad CMF (fresco/fintech) === */
+.sim-widget .btn-primary{background:var(--lima)!important;color:var(--navy)!important;box-shadow:0 10px 26px rgba(147,213,0,.32)!important}
+.sim-widget .btn-primary:hover{background:var(--lima2)!important;transform:translateY(-1px)}
+.sim-widget .eyebrow{background:rgba(147,213,0,.15)!important;color:var(--lima2)!important}
+.sim-widget .result-card.highlight{background:var(--navy)!important}
+.sim-widget .result-card.highlight .result-value{color:var(--lima)!important}
+.sim-widget .simhero h1{color:var(--navy)}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- El menú se inyecta aquí desde include.js -->
+<div id="site-header"></div>
+
+<div id="app">
+<div class="view" id="view-simulador">
+<div class="view-content">
+<div class="view-content-inner" style="max-width:1120px">
+<div class="sim-widget">
+    <section class="layout">
+      <div class="panel simhero">
+        <div class="eyebrow">Rápida, clara y fácil de usar</div>
+        <h1>Calcula tus cuotas en segundos</h1>
+        <p>
+          Conoce el valor estimado de tu cuota mensual de forma rápida. Solo ingresa el monto total,
+          selecciona el plazo que prefieras y obtén el resultado al instante con una experiencia cómoda.
+        <br>
+        Recuerda que las cuotas son calculadas con una tasa nominal de 40% anual.
+        </p>
+
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>Simulación inmediata</strong>
+            <span>Obtén el resultado en pantalla sin procesos complicados.</span>
+          </div>
+          <div class="hero-point">
+            <strong>Experiencia simple</strong>
+            <span>Ingresa el monto, elige el plazo y revisa tu cuota estimada.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel simulator">
+        <h2>Simula tu financiamiento</h2>
+        <p>
+          Completa los datos para visualizar tu cuota mensual estimada, el total a pagar y el monto total generado.
+        </p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="monto">Monto total</label>
+            <div class="input-wrap">
+              <span class="currency">$</span>
+              <input id="monto" type="text" inputmode="decimal" placeholder="Ej: 1,500.00" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="plazo">Plazo</label>
+            <select id="plazo">
+              <option value="6">6 meses</option>
+              <option value="12" selected>12 meses</option>
+              <option value="18">18 meses</option>
+              <option value="24">24 meses</option>
+              <option value="36">36 meses</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn-primary" id="calcularBtn" type="button">Simular financiamiento</button>
+          <button class="btn-secondary" id="limpiarBtn" type="button">Limpiar datos</button>
+        </div>
+
+        <div class="results">
+          <div class="result-card highlight">
+            <span class="result-label">Cuota mensual</span>
+            <strong class="result-value" id="cuota">$0.00</strong>
+            <span class="result-note">Resultado estimado según el monto ingresado y el plazo seleccionado.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- El pie de página se inyecta aquí desde include.js -->
+<div id="site-footer"></div>
+
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+<script>
+
+  const tasa = 0.40 / 12;
+
+  const montoInput = document.getElementById('monto');
+  const plazoSelect = document.getElementById('plazo');
+  const cuotaEl = document.getElementById('cuota');
+  const calcularBtn = document.getElementById('calcularBtn');
+  const limpiarBtn = document.getElementById('limpiarBtn');
+  const animatedValues = [cuotaEl];
+
+  function formatCurrency(value) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(value);
+  }
+
+  function formatInputValue(rawValue) {
+    if (!rawValue) return '';
+
+    const sanitized = rawValue.replace(/[^\d.]/g, '');
+    const firstDot = sanitized.indexOf('.');
+
+    let integerPart = sanitized;
+    let decimalPart = '';
+
+    if (firstDot >= 0) {
+      integerPart = sanitized.slice(0, firstDot);
+      decimalPart = sanitized.slice(firstDot + 1).replace(/\./g, '').slice(0, 2);
+    }
+
+    integerPart = integerPart.replace(/^0+(?=\d)/, '');
+    const withCommas = integerPart ? integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
+
+    if (firstDot >= 0) {
+      return `${withCommas || '0'}.${decimalPart}`;
+    }
+
+    return withCommas;
+  }
+
+  function parseMonto(value) {
+    if (!value) return 0;
+    const cleaned = value.replace(/,/g, '').trim();
+    const parsed = parseFloat(cleaned);
+    return Number.isNaN(parsed) ? 0 : parsed;
+  }
+
+  function animateResults() {
+    animatedValues.forEach((el) => {
+      el.classList.remove('pop');
+      void el.offsetWidth;
+      el.classList.add('pop');
+    });
+  }
+
+  function resetResults() {
+    cuotaEl.textContent = '$0.00';
+  }
+
+  function calcular() {
+    const monto = parseMonto(montoInput.value);
+    const plazo = parseInt(plazoSelect.value, 10);
+
+    if (!monto || monto <= 0) {
+      resetResults();
+      return;
+    }
+
+    const factor = Math.pow(1 + tasa, plazo);
+    const cuota = (monto * tasa * factor) / (factor - 1);
+
+    cuotaEl.textContent = formatCurrency(cuota);
+    animateResults();
+  }
+
+  function limpiar() {
+    montoInput.value = '';
+    plazoSelect.value = '12';
+    resetResults();
+  }
+
+  montoInput.addEventListener('input', (e) => {
+    const original = e.target.value;
+    const previousLength = original.length;
+    const previousCursor = e.target.selectionStart || previousLength;
+
+    const formatted = formatInputValue(original);
+    e.target.value = formatted;
+
+    const newLength = formatted.length;
+    const cursorOffset = newLength - previousLength;
+    const newCursor = Math.max(0, previousCursor + cursorOffset);
+
+    requestAnimationFrame(() => {
+      try {
+        e.target.setSelectionRange(newCursor, newCursor);
+      } catch (_) {}
+    });
+
+    calcular();
+  });
+
+  montoInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') calcular();
+  });
+
+  montoInput.addEventListener('blur', () => {
+    const monto = parseMonto(montoInput.value);
+    if (monto > 0) {
+      montoInput.value = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(monto);
+    }
+  });
+
+  plazoSelect.addEventListener('change', calcular);
+  calcularBtn.addEventListener('click', calcular);
+  limpiarBtn.addEventListener('click', limpiar);
+
+</script>
+</body>
+</html>

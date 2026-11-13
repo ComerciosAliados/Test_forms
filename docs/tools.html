@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWWLMPG');</script>
+<!-- End Google Tag Manager -->
+
+<title>Herramientas — CMF</title>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=26" rel="stylesheet"/>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWWLMPG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- El menú se inyecta aquí desde include.js -->
+<div id="site-header"></div>
+
+<div id="app">
+<div class="view" id="view-herramientas">
+<div class="view-hero">
+<div class="view-hero-inner">
+<div class="section-label">Para tomar mejores decisiones</div>
+<h1>Tus <em>herramientas</em> financieras</h1>
+<p>Calcula, planifica y optimiza tus finanzas con las herramientas de CMF.</p>
+</div>
+</div>
+<div class="view-content">
+<div class="view-content-inner">
+<!-- Calculator -->
+<div class="calc-card reveal">
+<div class="calc-title"><span class="ico"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg></span> Calculadora de cuotas</div>
+<div class="calc-sub">Descubre cuánto pagarías al mes según el monto y el plazo que elijas.</div>
+<div class="calc-row">
+<div class="calc-field">
+<label>Monto a financiar ($)</label>
+<input id="calc-monto" max="50000" min="100" oninput="calcCuotas()" type="number" value="1000"/>
+</div>
+<div class="calc-field">
+<label>Plazo (meses)</label>
+<select id="calc-plazo" onchange="calcCuotas()">
+<option value="3">3 meses</option>
+<option value="6">6 meses</option>
+<option selected="" value="12">12 meses</option>
+<option value="18">18 meses</option>
+<option value="24">24 meses</option>
+<option value="36">36 meses</option>
+</select>
+</div>
+</div>
+<div class="calc-row">
+<div class="calc-field">
+<label>Tasa de interés anual (%)</label>
+<input id="calc-tasa" max="60" min="0" oninput="calcCuotas()" step="0.1" type="number" value="24"/>
+</div>
+<div class="calc-field">
+<label>Tipo de tarjeta</label>
+<select id="calc-tipo" onchange="calcCuotas()">
+<option value="gold">Mastercard Gold</option>
+<option value="cmf">Tarjeta CMF</option>
+<option value="digital">Cuenta Digital</option>
+</select>
+</div>
+</div>
+<div class="calc-result-box" id="calc-result">
+<div class="calc-result-row">
+<span class="calc-result-label">Cuota mensual estimada</span>
+<span class="calc-result-value highlight" id="res-cuota">$94.56</span>
+</div>
+<div class="calc-result-row">
+<span class="calc-result-label">Total a pagar</span>
+<span class="calc-result-value" id="res-total">$1,134.72</span>
+</div>
+<div class="calc-result-row">
+<span class="calc-result-label">Intereses totales</span>
+<span class="calc-result-value" id="res-intereses">$134.72</span>
+</div>
+<div class="calc-result-row">
+<span class="calc-result-label">Plazo seleccionado</span>
+<span class="calc-result-value" id="res-plazo">12 meses</span>
+</div>
+</div>
+<p style="font-size:12px;color:var(--grey);margin-top:12px">* Cálculo estimado. Las tasas reales pueden variar según tu perfil crediticio. Consulta con un asesor CMF.</p>
+</div>
+<div class="tool-cards reveal">
+<div class="tool-card">
+<div class="tool-card-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></div>
+<div class="tool-card-title">Refinanciamiento</div>
+<p class="tool-card-desc">¿Tienes deudas en otras entidades? Consolídalas en CMF con una sola cuota más baja y mejor tasa. Simplifica tus pagos.</p>
+<button class="btn-lime">Solicitar información</button>
+</div>
+<div class="tool-card">
+<div class="tool-card-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+<div class="tool-card-title">Crédito adicional</div>
+<p class="tool-card-desc">¿Ya eres cliente CMF? Solicita un incremento de tu línea de crédito o un crédito adicional directamente desde CMF App, sin papeleo.</p>
+<button class="btn-lime">Solicitar crédito</button>
+</div>
+<div class="tool-card">
+<div class="tool-card-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+<div class="tool-card-title">Portal de comercios</div>
+<p class="tool-card-desc">Si eres comercio aliado, accede al portal para gestionar tus ventas en cuotas, ver reportes y cobros de forma segura.</p>
+<button class="btn-lime" onclick="navigate('merchants')">Ir al portal →</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- El pie de página se inyecta aquí desde include.js -->
+<div id="site-footer"></div>
+
+<script src="assets/js/include.js?v=1"></script>
+<script src="assets/js/script.js?v=5"></script>
+</body>
+</html>

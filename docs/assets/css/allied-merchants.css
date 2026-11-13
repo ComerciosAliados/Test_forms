@@ -1,0 +1,157 @@
+/* ============================================================
+   allied-merchants.css
+   Estilos extra para la página de Comercios Aliados (diseño nuevo).
+   ============================================================ */
+
+/* Logo dentro de cada tarjeta */
+.brand-card-logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.brand-card-logo img {
+  max-height: 100%;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+/* Provincia del comercio */
+.brand-card-prov {
+  font-size: 11px;
+  color: rgba(1, 30, 65, 0.55);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Iconos de redes / web */
+.brand-card-redes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.brand-card-redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.brand-card-redes a:hover {
+  transform: translateY(-2px);
+  background: #e2e8f0;
+}
+.brand-card-redes img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tarjetas ocultas hasta pulsar "ver más" */
+.brand-card.oculto {
+  display: none;
+}
+
+/* ============================================================
+   GRID FLEXIBLE — se adapta a móvil, tablet y escritorio
+   (sobrescribe el "3 columnas fijas" de styles.css)
+   ============================================================ */
+
+/* Móvil (base): 2 columnas */
+.brands-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Tablet: 3 columnas */
+@media (min-width: 600px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Escritorio: 4 columnas */
+@media (min-width: 960px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ajustes finos en pantallas pequeñas para que no se apriete */
+@media (max-width: 599px) {
+  .brand-card {
+    padding: 16px 10px;
+  }
+  .brand-card-logo {
+    height: 52px;
+  }
+  .brand-card-name {
+    font-size: 14px;
+  }
+  .brand-card-tag {
+    font-size: 12px;
+  }
+  .brand-card-redes a {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Dirección completa dentro de la tarjeta */
+.brand-card-addr {
+  font-size: 11px;
+  line-height: 1.35;
+  color: rgba(1, 30, 65, 0.55);
+  margin-top: 5px;
+}
+@media (max-width: 599px) {
+  .brand-card-addr {
+    font-size: 10px;
+  }
+}
+
+/* Etiquetas del mapa (nuevo mapa real, viewBox 1000 de ancho) */
+#prov-map .prov-lbl { font-size: 11px; }
+#prov-map .prov-shape { stroke-width: 1.2; }
+@media (max-width: 599px) {
+  /* en móvil el mapa se encoge; agrandamos el texto en unidades SVG
+     para que las provincias sigan siendo legibles */
+  #prov-map .prov-lbl { font-size: 17px; }
+}
+
+/* ===== Paginación del directorio de comercios ===== */
+.brands-pagination{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin:26px 0 8px}
+.brands-pagination:empty{display:none}
+.pg-btn{font:inherit;font-size:14px;font-weight:700;cursor:pointer;border:1px solid rgba(1,30,65,.15);
+  background:#fff;color:var(--navy,#011e41);border-radius:999px;padding:8px 14px;min-width:42px;min-height:42px;transition:all .15s}
+.pg-btn:hover:not(:disabled):not(.is-active){background:rgba(1,30,65,.06)}
+.pg-num.is-active{background:var(--navy,#011e41);color:#fff;border-color:var(--navy,#011e41)}
+.pg-btn:disabled{opacity:.4;cursor:default}
+.pg-ellipsis{color:rgba(1,30,65,.5);padding:0 2px}
+@media (max-width:560px){
+  .pg-btn{font-size:13px;padding:7px 11px;min-width:38px;min-height:38px}
+  .pg-nav{width:100%;order:1}          /* Anterior/Siguiente a lo ancho en móvil */
+}
+
+
+
+
+/* ===== Provincia: dropdown fácil en móvil (oculta el mapa chiquito) ===== */
+#filter-prov{width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid rgba(1,30,65,0.14);
+  background:#fff;font-family:inherit;font-size:14px;font-weight:600;color:var(--navy);margin-top:4px;
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23011e41' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;background-size:14px}
+@media (max-width:600px){
+  .prov-map-svg{display:none}
+  #filter-prov{display:block !important}
+}
+
+
+
